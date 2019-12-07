@@ -1,0 +1,7 @@
+#archivos
+package-lock.json
+
+#carpetas
+test_servers
+node_modules
+mutantes
