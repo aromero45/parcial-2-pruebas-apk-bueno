@@ -22,9 +22,14 @@ router.get('/stop', (req,res) => {
   })*/
 
   router.post('/calabash', (req,res) => {
-    calabashService.generateCalabash(req);
-    //console.log('Respuesta: ',res);
+    calabashService.generateCalabash(req, function(){ 
+      res.statusCode = 200;
+      res.send({ status: 'Ok' });
+    },function(err){
+      res.statusCode = 404;
+      res.send(err);  
+    })
+    return res;
   })
-
 
 module.exports = router;
