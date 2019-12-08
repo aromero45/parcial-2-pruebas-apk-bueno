@@ -22,30 +22,17 @@ module.exports.generateCalabash = function(req,success,error){
             });
         });
     }
-    var copyFile = (source,target) => {
-        return new Promise((resolve, reject) => {
-            //fs.unlinkSync(source);
-            console.log(` copyFile start: source = ${source}, target = ${target}`);
-            fs.copyFile(source, target, (err) => {
-                if (err) reject(err);
-                resolve();
-            });
-        });
-    };
-    
-    for(var i = 0,p = Promise.resolve();i<cant+1;i++){
+    for(var i = 0,p = Promise.resolve();i<cant;i++){
         p= p.then(_ => new Promise(resolve => {
             console.log('valor de i: ', (init+item));
             var path=`./report/mutante${init+item}`;
-            var source=`./mutantes/com.evancharlton.mileage-mutant${init+item}/com.evancharlton.mileage_3110-aligned-debugSigned.apk`;
-            var target=`./`;
             createFolder(path);
             shell.exec(`rm ./com.evancharlton.mileage_3110-aligned-debugSigned.apk`);
             shell.exec(`cp ./mutantes/com.evancharlton.mileage-mutant${init+item}/com.evancharlton.mileage_3110-aligned-debugSigned.apk ./ && calabash-android resign com.evancharlton.mileage_3110-aligned-debugSigned.apk`);
-            const eventsNumber = cant ? cant : 10;
+            //const eventsNumber = cant ? cant : 10;
             shell.exec(`adb install ./com.evancharlton.mileage_3110-aligned-debugSigned.apk`)
-            shell.exec(`adb shell monkey -p com.evancharlton.mileage -v ${eventsNumber}`, function(code, stdout, stderr) {
-                    console.log('stdout monkey: ',stdout);
+            shell.exec(`adb shell monkey -p com.evancharlton.mileage -v 5000`, function(code, stdout, stderr) {
+                    fs.writeFileSync(`${path}/monkey${init+item}.log`,stdout);
             });
             shell.exec(`calabash-android resign com.evancharlton.mileage_3110-aligned-debugSigned.apk`);
             shell.exec(`calabash-android build com.evancharlton.mileage_3110-aligned-debugSigned.apk`);
@@ -107,31 +94,5 @@ module.exports.generateCalabash = function(req,success,error){
         }));
     }
 }
-
-function requestcall(req,cant) {
-    return new Promise(function(resolve, reject) {
-        
-        //if (err) reject(err);
-
-        resolve();
-        //resolve('ok');
-        /*fs.readdir(`./`, function(err,items){
-            for(var j=0;j<items.length;j++){
-                console.log('items ./ : ',items[j])
-                if(items[j].includes(`com.evancharlton.mileage_3110`)){
-                    shell.exec(`rm ./com.evancharlton.mileage_3110-aligned-debugSigned.apk`);
-                    break;
-                }
-            }
-        });
-        resolve('ok');    
-            /*if(cant>1){
-                console.log(cant);
-                resolve();
-            }else{
-                resolve("ok");
-            }*/                
-    }); 
- }
 
  
