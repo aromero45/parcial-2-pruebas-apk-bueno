@@ -1,4 +1,3 @@
-
 Feature: Hacer pruebas en el apk del parcial bueno 
 
   Scenario: entrada 1 de fillup
@@ -9,6 +8,8 @@ Feature: Hacer pruebas en el apk del parcial bueno
     And I enter text "5" into field with id "volume"
     And I enter text "50" into field with id "odometer"
     Then I press "Save Fillup"
+    Then I take a screenshot with filename "Imagen1"
+    
 
   Scenario: entrada 2 de fillup
 
@@ -26,20 +27,20 @@ Feature: Hacer pruebas en el apk del parcial bueno
     And I enter text "158000" into field with id "price"
     And I enter text "15" into field with id "volume"
     And I enter text "486" into field with id "odometer"
-    Then I take a screenshot
+    Then I take a screenshot with filename "Imagen2"
     Then I press "Save Fillup"
     Then I wait for 2 seconds
-    Then I take a screenshot
+    Then I take a screenshot with filename "Imagen3"
   
   Scenario: Ir a Historial y ver todo
     
     When I see "Fillup"
     Then I press "History"
     Then I wait for 2 seconds
-    Then I take a screenshot
+    Then I take a screenshot with filename "Imagen4"
     Then I press view with id "text1"
     Then I wait for 2 seconds
-    Then I take a screenshot
+    Then I take a screenshot with filename "Imagen5"
 
   Scenario: Editar entrada en Historial
     
@@ -48,7 +49,7 @@ Feature: Hacer pruebas en el apk del parcial bueno
     Then I press view with id "text1"
     Then I press "Edit"
     Then I wait for 2 seconds
-    Then I take a screenshot
+    Then I take a screenshot with filename "Imagen6"
     Then I clear input field with id "price"
     Then I clear input field with id "volume"
     Then I clear input field with id "odometer"
@@ -57,27 +58,27 @@ Feature: Hacer pruebas en el apk del parcial bueno
     And I enter text "548" into field with id "odometer"
     Then I press "Save changes"
     Then I wait for 2 seconds
-    Then I take a screenshot
+    Then I take a screenshot with filename "Imagen7"
 
   Scenario: Ir a Estadisticas del fillup 
      
     When I see "Fillup"
     Then I press "Statistics"
-    Then I take a screenshot
+    Then I take a screenshot with filename "Imagen8"
     And I scroll down  
-    Then I take a screenshot
+    Then I take a screenshot with filename "Imagen9"
     Then I wait for 2 seconds
 
   Scenario: Ver vehiculos y agregar uno nuevo 
 
     When I see "Fillup"
     Then I press "Vehicles"
-    Then I take a screenshot
+    Then I take a screenshot with filename "Imagen10"
     Then I wait for 2 seconds
     Then I press the menu key
     Then I press "Add new vehicle"
     Then I wait for 2 seconds
-    Then I take a screenshot
+    Then I take a screenshot with filename "Imagen11"
     Then I wait for 2 seconds
     And I enter text "carro alex" into field with id "title"
     And I enter text "2018" into field with id "year"
@@ -94,11 +95,11 @@ Feature: Hacer pruebas en el apk del parcial bueno
     And I scroll down
     Then I press "economy"
     And I press "Km / Gallon"
-    Then I take a screenshot
+    Then I take a screenshot with filename "Imagen12"
     Then I wait for 2 seconds
     And I press "Add new vehicle"
     Then I wait for 2 seconds
-    Then I take a screenshot
+    Then I take a screenshot with filename "Imagen13"
 
  Scenario: Ver vehiculos crear intervalo de servicio
 
@@ -108,26 +109,25 @@ Feature: Hacer pruebas en el apk del parcial bueno
     Then I press the menu key
     Then I press "Service intervals"
     Then I wait for 2 seconds
-    Then I take a screenshot
+    Then I take a screenshot with filename "Imagen14"
     Then I wait for 2 seconds   
     Then I press "Add service interval"
     Then I hide the keyboard
-#    And I scroll down
-#    And I scroll down
-#    Then I clear input field with id "title"
-#    Then I clear input field with id "description"
-#    Then I clear input field with id "distance"
-#    Then I clear input field with id "duration"
-#    And I enter text "Oil Test" into field with id "title"
-#    And I enter text "Oil test 1" into field with id "description"
-#    And I enter text "2000" into field with id "distance"
-#    And I enter text "80" into field with id "duration"
-#    And I enter text "3000" into field with id "odometer"
+    Then I clear input field with id "title"
+    Then I clear input field with id "description"
+    And I scroll down
+    And I scroll down
+    And I enter text "Oil Test" into field with id "title"
+    And I enter text "Oil test 1" into field with id "description"
+    And I scroll down
+    And I scroll down
+    Then I clear input field with id "odometer"
+    And I enter text "3000" into field with id "odometer"
     Then I wait for 2 seconds
-    Then I take a screenshot
+    Then I take a screenshot with filename "Imagen15"
     Then I press "Add service interval"
     Then I wait for 2 seconds
-    Then I take a screenshot
+    Then I take a screenshot with filename "Imagen16"
 
 Scenario: Ver settings de vehicles
 
@@ -137,7 +137,10 @@ Scenario: Ver settings de vehicles
     Then I press the menu key
     Then I press "Settings"
     Then I wait for 2 seconds
-    Then I take a screenshot
+    Then I take a screenshot with filename "Imagen17"
+  
+
+  
   
 
   
