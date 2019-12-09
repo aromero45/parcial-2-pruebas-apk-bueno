@@ -112,17 +112,17 @@ Feature: Hacer pruebas en el apk del parcial bueno
     Then I wait for 2 seconds   
     Then I press "Add service interval"
     Then I hide the keyboard
-    And I scroll down
-    And I scroll down
-    Then I clear input field with id "title"
-    Then I clear input field with id "description"
-    Then I clear input field with id "distance"
-    Then I clear input field with id "duration"
-    And I enter text "Oil Test" into field with id "title"
-    And I enter text "Oil test 1" into field with id "description"
-    And I enter text "2000" into field with id "distance"
-    And I enter text "80" into field with id "duration"
-    And I enter text "3000" into field with id "odometer"
+#    And I scroll down
+#    And I scroll down
+#    Then I clear input field with id "title"
+#    Then I clear input field with id "description"
+#    Then I clear input field with id "distance"
+#    Then I clear input field with id "duration"
+#    And I enter text "Oil Test" into field with id "title"
+#    And I enter text "Oil test 1" into field with id "description"
+#    And I enter text "2000" into field with id "distance"
+#    And I enter text "80" into field with id "duration"
+#    And I enter text "3000" into field with id "odometer"
     Then I wait for 2 seconds
     Then I take a screenshot
     Then I press "Add service interval"

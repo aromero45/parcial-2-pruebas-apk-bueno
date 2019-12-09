@@ -41,10 +41,10 @@ module.exports.generateCalabash = function(req,success,error){
             shell.exec(`calabash-android build com.evancharlton.mileage_3110-aligned-debugSigned.apk`);
             shell.exec(`SCREENSHOT_PATH=./report/mutante${init+item}/ calabash-android run com.evancharlton.mileage_3110-aligned-debugSigned.apk -f html -o ./report/mutante${init+item}/result_mutante_${init+item}.html`, function(val, stdout, stderr) {
                 vrt.generateVRT((init+item));
-                shell.exec(`adb install ./com.evancharlton.mileage_3110-aligned-debugSigned.apk`)
-                shell.exec(`adb shell monkey -p com.evancharlton.mileage -v 5000`, function(code, stdout, stderr) {
+                //shell.exec(`adb install ./com.evancharlton.mileage_3110-aligned-debugSigned.apk`)
+                /*shell.exec(`adb shell monkey -p com.evancharlton.mileage -v 5000`, function(code, stdout, stderr) {
                     fs.writeFileSync(`${path}/monkey${init+item}.log`,stdout);
-                });
+                });*/
                 if(item == cant){
                     success("ok");
                 }else{
