@@ -8,9 +8,7 @@ Feature: Hacer pruebas en el apk del parcial bueno
     And I enter text "12" into field with id "price"
     And I enter text "5" into field with id "volume"
     And I enter text "50" into field with id "odometer"
-    Then I take a screenshot
     Then I press "Save Fillup"
-    Then I take a screenshot
 
   Scenario: entrada 2 de fillup
 
@@ -19,9 +17,7 @@ Feature: Hacer pruebas en el apk del parcial bueno
     And I enter text "150000" into field with id "price"
     And I enter text "14" into field with id "volume"
     And I enter text "470" into field with id "odometer"
-    Then I take a screenshot
     Then I press "Save Fillup"
-    Then I take a screenshot
 
   Scenario: entrada 3 de fillup
 
@@ -32,36 +28,36 @@ Feature: Hacer pruebas en el apk del parcial bueno
     And I enter text "486" into field with id "odometer"
     Then I take a screenshot
     Then I press "Save Fillup"
+    Then I wait for 2 seconds
     Then I take a screenshot
   
   Scenario: Ir a Historial y ver todo
     
     When I see "Fillup"
     Then I press "History"
+    Then I wait for 2 seconds
     Then I take a screenshot
     Then I press view with id "text1"
     Then I wait for 2 seconds
     Then I take a screenshot
-    Then I wait for 2 seconds
 
   Scenario: Editar entrada en Historial
     
     When I see "Fillup"
     Then I press "History"
-    Then I take a screenshot
     Then I press view with id "text1"
-    Then I wait for 2 seconds
-    Then I take a screenshot
-    Then I wait for 2 seconds
     Then I press "Edit"
     Then I wait for 2 seconds
     Then I take a screenshot
+    Then I clear input field with id "price"
+    Then I clear input field with id "volume"
+    Then I clear input field with id "odometer"
     And I enter text "25000" into field with id "price"
     And I enter text "10" into field with id "volume"
     And I enter text "548" into field with id "odometer"
     Then I press "Save changes"
-
-
+    Then I wait for 2 seconds
+    Then I take a screenshot
 
   Scenario: Ir a Estadisticas del fillup 
      
@@ -80,6 +76,7 @@ Feature: Hacer pruebas en el apk del parcial bueno
     Then I wait for 2 seconds
     Then I press the menu key
     Then I press "Add new vehicle"
+    Then I wait for 2 seconds
     Then I take a screenshot
     Then I wait for 2 seconds
     And I enter text "carro alex" into field with id "title"
@@ -95,7 +92,7 @@ Feature: Hacer pruebas en el apk del parcial bueno
     And I press "Gallons"
     And I press "Gallons"
     And I scroll down
-    Then I press "Miles / Gallon"
+    Then I press "economy"
     And I press "Km / Gallon"
     Then I take a screenshot
     Then I wait for 2 seconds
