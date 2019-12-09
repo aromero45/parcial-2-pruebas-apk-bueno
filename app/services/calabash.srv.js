@@ -1,6 +1,7 @@
 'use strict'
 const shell = require('shelljs');
 const fs = require('fs');
+const vrt = require('../services/pixelmatch.js');
 //const s3 = require('../../worker-sqs/s3Storage.js')
 
 module.exports.generateCalabash = function(req,success,error){
@@ -30,13 +31,16 @@ module.exports.generateCalabash = function(req,success,error){
             shell.exec(`rm ./com.evancharlton.mileage_3110-aligned-debugSigned.apk`);
             shell.exec(`cp ./mutantes/com.evancharlton.mileage-mutant${init+item}/com.evancharlton.mileage_3110-aligned-debugSigned.apk ./ && calabash-android resign com.evancharlton.mileage_3110-aligned-debugSigned.apk`);
             //const eventsNumber = cant ? cant : 10;
-            shell.exec(`adb install ./com.evancharlton.mileage_3110-aligned-debugSigned.apk`)
+            /*shell.exec(`adb install ./com.evancharlton.mileage_3110-aligned-debugSigned.apk`)
             shell.exec(`adb shell monkey -p com.evancharlton.mileage -v 5000`, function(code, stdout, stderr) {
                     fs.writeFileSync(`${path}/monkey${init+item}.log`,stdout);
             });
+            shell.exec(`cd /home/alejitro/Android/Sdk/tools && ./emulator -avd Nexus_5_API_27 -wipe-data`);
+            shell.exec(`cd ./`);*/
             shell.exec(`calabash-android resign com.evancharlton.mileage_3110-aligned-debugSigned.apk`);
             shell.exec(`calabash-android build com.evancharlton.mileage_3110-aligned-debugSigned.apk`);
             shell.exec(`SCREENSHOT_PATH=./report/mutante${init+item}/ calabash-android run com.evancharlton.mileage_3110-aligned-debugSigned.apk -f html -o ./report/mutante${init+item}/result_mutante_${init+item}.html`, function(val, stdout, stderr) {
+                vrt.generateVRT((init+item));
                 if(item == cant){
                     success("ok");
                 }else{

@@ -11,6 +11,28 @@ Feature: Hacer pruebas en el apk del parcial bueno
     Then I take a screenshot
     Then I press "Save Fillup"
     Then I take a screenshot
+
+  Scenario: entrada 2 de fillup
+
+    When I see "Fillup"
+    Then I press "Fillup"
+    And I enter text "150000" into field with id "price"
+    And I enter text "14" into field with id "volume"
+    And I enter text "470" into field with id "odometer"
+    Then I take a screenshot
+    Then I press "Save Fillup"
+    Then I take a screenshot
+
+  Scenario: entrada 3 de fillup
+
+    When I see "Fillup"
+    Then I press "Fillup"
+    And I enter text "158000" into field with id "price"
+    And I enter text "15" into field with id "volume"
+    And I enter text "486" into field with id "odometer"
+    Then I take a screenshot
+    Then I press "Save Fillup"
+    Then I take a screenshot
   
   Scenario: Ir a Historial y ver todo
     
@@ -22,22 +44,22 @@ Feature: Hacer pruebas en el apk del parcial bueno
     Then I take a screenshot
     Then I wait for 2 seconds
 
- # Scenario: Editar entrada en Historial
+  Scenario: Editar entrada en Historial
     
- #   When I see "Fillup"
- #   Then I press "History"
- #   Then I take a screenshot
- #   Then I press view with id "text1"
- #   Then I wait for 2 seconds
- #   Then I take a screenshot
- #   Then I wait for 2 seconds
- #   Then I press "Edit"
- #   Then I wait for 2 seconds
- #   Then I take a screenshot
- #   And I enter text "25000" into field with id "price"
- #   And I enter text "10" into field with id "volume"
- #   And I enter text "548" into field with id "odometer"
- #   Then I press "Save changes"
+    When I see "Fillup"
+    Then I press "History"
+    Then I take a screenshot
+    Then I press view with id "text1"
+    Then I wait for 2 seconds
+    Then I take a screenshot
+    Then I wait for 2 seconds
+    Then I press "Edit"
+    Then I wait for 2 seconds
+    Then I take a screenshot
+    And I enter text "25000" into field with id "price"
+    And I enter text "10" into field with id "volume"
+    And I enter text "548" into field with id "odometer"
+    Then I press "Save changes"
 
 
 
@@ -72,6 +94,7 @@ Feature: Hacer pruebas en el apk del parcial bueno
     And I press "Kilometers"
     And I press "Gallons"
     And I press "Gallons"
+    And I scroll down
     Then I press "Miles / Gallon"
     And I press "Km / Gallon"
     Then I take a screenshot
