@@ -70,7 +70,7 @@ La aplicación cuenta con `8,212` reviews y una calificación de `3.4` en Google
 * Mileage original APK provista por el monitor de la clase como la versión estable de la aplicación.
 * Mileage APK's mutantes provistos por el monitor de la clase como la versión inestable de la aplicación.
 * Calabash para automatización de pruebas sobre Android
-* pixel mach para grabar evidencia de ejecución de pruebas de aceptación, errores de ejecución etc.
+* pixelmatch para grabar evidencia de ejecución de pruebas de sistema y hacer VRT sobre las imagenes generadas.
 * Aplicación original descargada y compilada desde el repositorio base.
 
 **Recurso Humano:**
@@ -81,16 +81,16 @@ La aplicación cuenta con `8,212` reviews y una calificación de `3.4` en Google
 
 No va a existir integración con desarrollo aunque de ser posible _issues_ pueden ser reportados en el repositorio de código fuente de la aplicación.
 
-El proceso de pruebas comienza el día 9/5/18 a las 19:30 y acaba el día 14/5/18 a las 23:55.
+El proceso de implementacion de herramientas de automatización y pruebas comienza el día 04/12/11 a las 19:30 y acaba el día 11/12/19 a las 23:55.
 
 El proceso a seguir para encontrar los defectos detectados en los mutantes es:
 
 1. Instalar APK 
 2. Ejecutar pruebas de calabash
 3. Ejecutar random testing
-4. Ejecutar pruebas unitarias
+4. Ejecutar pruebas de VRT
 
-* Primero se va a realizar el proceso sobre el APK original con el objetivo de encontrar una muestra base del comportamiento de la aplicación sin defectos inyectados, esta prueba inicial busca determinar la cantidad de defectos que pueden ser hallados usando las pruebas unitarias del desarrollador inicial, las pruebas de Calabash codificadas por mi y una seria de eventos aleatorios generados por la herramienta de random testing de android.
+* Primero se va a realizar el proceso sobre el APK original con el objetivo de encontrar una muestra base del comportamiento de la aplicación sin defectos inyectados, esta prueba inicial busca determinar la cantidad de defectos que pueden ser hallados usando las pruebas unitarias del desarrollador inicial, las pruebas de Calabash codificadas por nosotros y una serie de eventos aleatorios generados por la herramienta de random testing de android.
 
 ## Informe de Pruebas de Aceptación
 
@@ -98,7 +98,7 @@ El proceso a seguir para encontrar los defectos detectados en los mutantes es:
 
 ---
 
-Se realizo un informe completo de todas las funcionalidades disponibles sobre Car Report.
+Se realizo un informe completo de todas las funcionalidades disponibles sobre Mileage car report.
 
 ## Resultados
 
@@ -228,7 +228,8 @@ Se realizo una herramienta de automatización sobre comando bash que hace lo sig
 2. Copiar el APK del mutante
 3. Firmal el APK, debido a que la copia firmada no funcionaba
 4. Ejecutar las pruebas de Calabash
-5. Copiar los resultados de Calabash
+5. Generar las imagenes para hacer VRT
+6. Copiar los resultados de Calabash
 6. Abrir la aplicación con su actividad principal
 7. Ejecutar random testing
 8. Guardar los resultados de random testing
