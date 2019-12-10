@@ -91,10 +91,8 @@ Feature: Hacer pruebas en el apk del parcial bueno
     And I press "Miles"
     And I press "Kilometers"
     And I press "Gallons"
-    And I press "Gallons"
+    And I press "Litres"
     And I scroll down
-    Then I press "economy"
-    And I press "Miles / Litre"
     Then I take a screenshot with filename "Img_10"
     Then I wait for 2 seconds
     And I press "Add new vehicle"
