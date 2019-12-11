@@ -41,7 +41,7 @@ La aplicación cuenta con `8,212` reviews y una calificación de `3.4` en Google
 * Realizar Pruebas exploratorias sobre la aplicación movil Mileage para conocer cuales son sus principales funcionalidades.
 * Evaluar la calidad de la suite de pruebas usando los mutantes creados. 
 * Realizar Pruebas VRT con apk bueno y los mutantes para hallar posibles fallos que no se puedan hallar a simple vista. 
-* Reportar 
+* Presentar reportes de cada prueba para su analisis. 
 * Automatizar escenarios básicos que no esten contemplados en la suite de pruebas. 
 * Construir una aplicación que automatice la prueba sobre los mutantes y sobre la aplicacion limpia y reportar los fallos detectados. 
 
@@ -61,7 +61,7 @@ La aplicación cuenta con `8,212` reviews y una calificación de `3.4` en Google
 
 * Computador MSI con sistema operativo Ubuntu 18.04, 16GB RAM, 512GB estado solido, core i7.
 * Celular HUAWEI P20 Lite VERSION DE ANDROID 9.
-* Emulador PIXEL 3A, API 24, Android 7.0, 2GB
+* Emulador Nexus 5, API 27, Android 8.1, 2GB
 
 **Software:**
 
@@ -281,9 +281,9 @@ Comentarios sobre la aplicación Car Report
 
 ---
 
-* [Car Report](https://f-droid.org/en/packages/me.kuehle.carreport/)
-* [Car Report - Google Play](https://play.google.com/store/apps/details?id=me.kuehle.carreport)
-* [Car Report - BitBucket repo](https://bitbucket.org/frigus02/car-report)
+* [Mileage](https://github.com/evancharlton/android-mileage)
+* [Mileage - Google Play](https://play.google.com/store/apps/details?id=com.evancharlton.mileage&hl=en_US)
+
 
 
 
