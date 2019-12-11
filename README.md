@@ -50,6 +50,8 @@ La aplicación cuenta con `8,212` reviews y una calificación de `3.4` en Google
 **Sistema**
 
 * Se realizará un proceso de BDD sobre el APK instalado en un dispositivo Android emulado probando la aplicación como un sistema completo.
+* Por cada escenario de las pruebas BDD se toma un screenshot, esto se hace en cada mutante para luego ser comparado con el apk limpio. 
+* Se hace VRT por cada screenshot del mutante con los screenshot del apk limpio y se geenra un reporte automaticamente con el worker. 
 
 **Aceptación**
 
@@ -66,11 +68,10 @@ La aplicación cuenta con `8,212` reviews y una calificación de `3.4` en Google
 **Software:**
 
 * Android Studio
-* adb
 * Mileage original APK provista por el monitor de la clase como la versión estable de la aplicación.
 * Mileage APK's mutantes provistos por el monitor de la clase como la versión inestable de la aplicación.
 * Calabash para automatización de pruebas sobre Android
-* pixelmatch para grabar evidencia de ejecución de pruebas de sistema y hacer VRT sobre las imagenes generadas.
+* pixelmatch para hacer c evidencia de ejecución de pruebas de sistema y hacer VRT sobre las imagenes generadas.
 * Aplicación original descargada y compilada desde el repositorio base.
 
 **Recurso Humano:**
@@ -92,18 +93,13 @@ El proceso a seguir para encontrar los defectos detectados en los mutantes es:
 
 * Primero se va a realizar el proceso sobre el APK original con el objetivo de encontrar una muestra base del comportamiento de la aplicación sin defectos inyectados, esta prueba inicial busca determinar la cantidad de defectos que pueden ser hallados usando las pruebas unitarias del desarrollador inicial, las pruebas de Calabash codificadas por nosotros y una serie de eventos aleatorios generados por la herramienta de random testing de android.
 
-## Informe de Pruebas de Aceptación
-
-[informe](informe.pdf)
-
----
 
 Se realizo un informe completo de todas las funcionalidades disponibles sobre Mileage car report.
 
 ## Resultados
 
-* PRUEBAS CON CALABASH - [más información](calabash/README.md)
-* RANDOM TESTING - [más información](random/README.md)
+* PRUEBAS CON CALABASH 
+* VRT usando PixelMatch 
 
 ---
 
@@ -184,31 +180,7 @@ Se realizo un informe completo de todas las funcionalidades disponibles sobre Mi
 |352 mutante|19/19|3m18.630s||||
 |354 mutante|19/19|7m47.217s||||
 
-## Issues en repositorio de Car Report
 
----
-
-### Random Testing
-
-Se ha creado un issue en el repositorio oficial de Car Report relacionado a un inconveniente al momento de ejecutar random testing sobre la aplicación original. Ese error es el siguiente:
-
-```
-// CRASH: me.kuehle.carreport (pid 16429) 
-// Short Msg: java.lang.NullPointerException 
-// Long Msg: java.lang.NullPointerException: Attempt to invoke virtual method 'void android.view.View.getBoundsOnScreen(android.graphics.Rect)' on a null object reference
-```
-
-Y se produce generalmente después del evento:
-
-```
-:Sending Trackball (ACTION_MOVE): 0:(2.0,4.0) //[calendar_time:2018-05-10 21:03:47.648 system_uptime:23891612] // Sending event #28800 // Allowing start of Intent { cmp=me.kuehle.carreport/.gui.DataDetailActivity } in package me.kuehle.carreport
-```
-
-Usted puede acceder al issue en la siguiente [URL](https://bitbucket.org/frigus02/car-report/issues/93/random-testing)
-
-![](assets/issue1.png)
-
-![](assets/issue2.png)
 
 ### BDT
 
