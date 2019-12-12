@@ -90,7 +90,7 @@ El proceso a seguir para encontrar los defectos detectados en los mutantes es:
 5. Leer resultados 
 
 
-* Primero se va a realizar el proceso sobre el APK original con el objetivo de encontrar una muestra base del comportamiento de la aplicación sin defectos inyectados, esta prueba inicial busca determinar la cantidad de defectos que pueden ser hallados usando las pruebas unitarias del desarrollador inicial, las pruebas de Calabash codificadas por nosotros y una serie de eventos aleatorios generados por la herramienta de random testing de android.
+Primero se va a realizar el proceso de pruebas sobre el APK original con el objetivo de encontrar una muestra base del comportamiento de la aplicación sin defectos inyectados, esta prueba inicial busca determinar la cantidad de defectos que pueden ser hallados usando las pruebas de calabash y VRT codificadas por nosotros.
 
 
 Se realizo un informe completo de todas las funcionalidades disponibles sobre Mileage.
@@ -101,6 +101,7 @@ Se realizo un informe completo de todas las funcionalidades disponibles sobre Mi
 * VRT usando PixelMatch 
 
 --- Resultados -- 
+
 
 
 ## Herramienta de automatización 
