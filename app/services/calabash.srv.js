@@ -28,6 +28,8 @@ module.exports.generateCalabash = function(req,success,error){
     if((init+cant)>numMutantes){
         dif=(init+cant)-numMutantes;
         cant=cant-dif;
+    }else{
+        cant=cant;
     }
     for(var i = 0,p = Promise.resolve();i<cant;i++){
         p= p.then(_ => new Promise(resolve => {
