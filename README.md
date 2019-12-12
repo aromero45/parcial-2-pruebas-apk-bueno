@@ -106,18 +106,17 @@ Se realizo un informe completo de todas las funcionalidades disponibles sobre Mi
 
 ---
 
-Se realizo una herramienta de automatización sobre comando bash que hace lo siguiente:
+Se realizo una herramienta de automatización sobre comando node app.js que hace lo siguiente:
 
-1. Crear cartpeta de resultados del mutante
-2. Copiar el APK del mutante
-3. Firmal el APK, debido a que la copia firmada no funcionaba
-4. Ejecutar las pruebas de Calabash
-5. Generar las imagenes para hacer VRT
-6. Copiar los resultados de Calabash
-6. Abrir la aplicación con su actividad principal
-7. Ejecutar random testing
-8. Guardar los resultados de random testing
-9. Limpiar
+1. Crear carpeta de resultados del mutante.
+2. Copiar el APK del mutante.
+3. Firmal el APK, debido a que la copia firmada no funcionaba.
+4. Ejecutar las pruebas de Calabash.
+5. Generar las imagenes para hacer VRT.
+6. Copiar los resultados de Calabash.
+7. Con PixelMatch generar las comparaciones de VRT. 
+8. Generar reporte de comparacion para VRT.
+9. Guardar todos los reportes generados en la carpeta de resultados. 
 
 
 ## Conclusiones
@@ -126,28 +125,24 @@ Se realizo una herramienta de automatización sobre comando bash que hace lo sig
 
 ### BDT
 
-* Todos los escenarios de pruebas que quicieran explorar la aplicación de forma profunda, es decir más allá de la pantalla inicial, deben contemplar el hecho de tener por lo menos 1 carro agregado al sistema.
-* Los escenarios de pruebas construidos en Calabash eran buenos para detectar problemas con: el cambio de ID's de los elementos, cambios en los textos del menú, navegación completa y cambio entre actividades.
-* Los escenarios propuestos no eran buenos detectando mutantes visuales, es decir cambios en colores o posiciones.
+* Todos los escenarios de pruebas tienen una toma de screenshot apenas haga su proceso. 
+* Los escenarios de pruebas construidos en Calabash se hicieron tal para detectar errores comunes en el apk. 
+* Los escenarios propuestos no eran buenos detectando errores en la parte visual, es decir cambios en colores, posiciones, numeros aleatorios, etc.
 
 ### VRT
 
-* La aplicación original cuenta con un fallo que en ocasiones detecta en monkey de Android y produce que la aplicación se cierra dañando la prueba, sin embargo cambiando la semilla para el APK bajo pruebas, se podia completar el esenario completo, por lo cual las pruebas de random testing son costosas en tiempo porque deben ser bien estructuradas para evitar encontrar errores conocidos y poder explorar la aplicaciñon más allá de esa barrera.
+* con PixelMatch se detecta cambios visuales entre las diferentes imagenes generadas por cada escenario en Calabash. 
 
 ### Repositorio
 
-* Se ha iniciado un hilo de conversación con el dueño de la aplicación para hacer un pull request incluyendo las pruebas de Calabash en el repositorio original así como un sistema de monkey testing.
+* Se sube todo a este repositio, el worker, los escenarios en calabash y los resultados de todas las pruebas en los mutantes que seleccionamos. 
 
-### Usabilidad
-
-* Los comentarios de una persona que esta acostumbrada a manejar dispositivos móviles como Celulares de corte Android sobre la usabilidad de la aplicación no son buenos evidenciando grandes problemas conceptuales, cambios de moneda, navegabilidad y fácilidad para encontrar la información.
 
 ### Ejecución de pruebas
 
 * El tiempo fue la mayor limitación para ejecutar las pruebas de forma completa.
-* El telefono queda con mucha basura entre ejecució y ejecución, así que se recomienda eliminar y volver a crear el dispositivo virtual, pero este proceso ubiese tomado mucho más tiempo para la ejecución de 1 solo mutante.
-* Con más tiempo se recomienda hacer pruebas de regresión visual para evaluar las gráficas.
-* Los mutantes más fáciles de detectar con random testing tenian que ver con los selectores de fechas y pintado de gráficas.
+* El telefono o emulador en cada prueba queda con mucha informacion basura, haciendo que el espacio requerido en el celular o emulador sea mayor. 
+* Los mutantes más fáciles de detectar son los mutantes detectados por BDD, ya que no se podian ingresar algunas opciones y fallaba los escenarios. 
 
 ## Referencias
 
