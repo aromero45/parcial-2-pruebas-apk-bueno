@@ -62,6 +62,7 @@ La aplicación cuenta con `8,212` reviews y una calificación de `3.4` en Google
 **Hardware:**
 
 * Computador MSI con sistema operativo Ubuntu 18.04, 16GB RAM, 512GB estado solido, core i7.
+* Computador Dell inspiron 15 7000 gaming con sistema operativo ubuntu 18.04, 16 GB de ram, 1 TB de estado solido, core i7. 
 * Celular HUAWEI P20 Lite VERSION DE ANDROID 9.
 * Emulador Nexus 5, API 27, Android 8.1, 2GB
 
