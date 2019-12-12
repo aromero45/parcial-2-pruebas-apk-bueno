@@ -11,6 +11,8 @@ module.exports.generateCalabash = function(req,success,error){
     var cant= req.body.cantidad;
     //var path = req.body.path;
     var item =0;
+    const numMutantes=4546;
+    let dif;
     //var i=init;
     //console.log("..."+JSON.stringify(req));
     console.log('Request: ',req.body);
@@ -22,6 +24,10 @@ module.exports.generateCalabash = function(req,success,error){
                 resolve();
             });
         });
+    }
+    if((init+cant)>numMutantes){
+        dif=(init+cant)-numMutantes;
+        cant=cant-dif;
     }
     for(var i = 0,p = Promise.resolve();i<cant;i++){
         p= p.then(_ => new Promise(resolve => {
