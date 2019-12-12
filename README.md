@@ -102,7 +102,7 @@ Se realizo un informe completo de todas las funcionalidades disponibles sobre Mi
 
 --- Resultados -- 
 
-
+[Resultados](https://github.com/aromero45/parcial-2-pruebas-apk-bueno/blob/master/report/Reporte%20de%20mutantes%20encontrados.xlsx)
 
 ## Herramienta de automatización 
 
