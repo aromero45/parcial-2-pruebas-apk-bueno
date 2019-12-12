@@ -102,7 +102,9 @@ Se realizo un informe completo de todas las funcionalidades disponibles sobre Mi
 
 --- Resultados -- 
 
-[Resultados](https://github.com/aromero45/parcial-2-pruebas-apk-bueno/blob/master/report/Reporte%20de%20mutantes%20encontrados.xlsx)
+En el siguiente link se encuentra un archivo de excel con los resultados de las 831 pruebas realizadas sobres los diferentes mutantes, con sus respectivos reportes de errores encontrados y los links a las carpetas en el repositorio.
+
+[Resultados de pruebas sobre los mutantes](https://github.com/aromero45/parcial-2-pruebas-apk-bueno/blob/master/report/Reporte%20de%20mutantes%20encontrados.xlsx)
 
 ## Herramienta de automatización 
 
