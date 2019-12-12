@@ -2,7 +2,7 @@
 
 ---
 
-## Cracterísticas de la App
+## Características de la App
 
 **Mileage**
 
