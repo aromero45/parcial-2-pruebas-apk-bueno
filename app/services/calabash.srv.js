@@ -31,6 +31,7 @@ module.exports.generateCalabash = function(req,success,error){
     }else{
         cant=cant;
     }
+    console.log('Cantidad de ejecuciones a realizar: ',cant);
     for(var i = 0,p = Promise.resolve();i<cant;i++){
         p= p.then(_ => new Promise(resolve => {
             console.log('valor de i: ', (init+item));
